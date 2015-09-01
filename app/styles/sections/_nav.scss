@@ -1,0 +1,451 @@
+// Default styles
+#nav-container {
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  > .nav-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Vertical NAV only
+.nav-vertical {
+  .nav {
+    > li {
+      border-bottom: 1px solid darken($sidebar_bg, 10%);
+      &.open {
+        > a {
+          background-color: darken($sidebar_bg, 5%);
+          color: $brand-primary;
+        }
+        > .fa { color: $brand-primary; }
+      }
+
+    }
+  }
+}
+
+.nav-container {
+  background-color: $sidebar_bg;
+
+  &.nav-fixed {
+    box-shadow: $shadow-z-2;
+  }
+  // height: 100%;
+  .nav {
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: -blackberry-touch;
+
+    >li>a>i,
+    >li>a>.nav-icon {
+      display: inline-block;
+      margin-right: 10px;
+      width: 20px;
+      line-height: 1;
+      text-align: center;
+      font-size: 14px;
+      @include transition(all .2s ease-in-out);
+    }
+
+    a {
+      font-size: 13px;
+      color: $link_color;
+      @include transition(all .2s ease-in-out);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    >li {
+      position: relative;
+      margin: 0;
+      text-align: left;
+      // font-weight: bold;
+      @include transition( all .2s ease-in-out);
+      &:hover {
+        > a {
+          background-color: darken($sidebar_bg, 5%);
+          color: $brand-primary;
+        }
+        > .fa { color: $brand-primary; }
+      }
+      &.active {
+        > a {
+          background-color: $link_active_bg;
+          color: $brand-primary;
+        }
+        > .fa { color: $brand-primary; }
+      }
+
+      &:first-child > a {
+        border-top: 0;
+      }
+      >a {
+        position: relative;
+        display: block;
+        padding: 15px 15px;
+        @include transition( all .2s ease-in-out);
+
+        .badge {
+          position: absolute;
+          top: 16px;
+          right: 5px;
+        }
+      }
+
+      > .icon-has-ul-h { // icon for horizontal nav
+        display: none;
+      }
+
+      > .icon-has-ul { // icon for default vertical nav
+        position: absolute;
+        top: 18px;
+        right: 15px;
+      }
+    }
+
+    // sub menu
+    ul {
+      background-color: $sub_nav_bg;
+      display: none;
+
+      a {
+        font-size: 13px;
+      }
+
+      li {
+        position: relative;
+        padding: 0;
+        &:hover,
+        &.active {
+          > a {
+            color: $brand-primary;
+            border-left: 4px solid $brand-primary;
+          }
+        }
+        &.active {
+          > a {
+            border-left: 4px solid $brand-primary;
+            background-color: darken($sub_nav_bg, 5%);
+          }
+        }
+        &:last-child > a {
+          border-bottom: 0;
+        }
+
+        > a {
+          position: relative;
+          display: block;
+          padding: 13px 0 13px 25px;
+          @include transition( all .2s ease-in-out);
+          border-left: 4px solid transparent;
+          &:first-child {
+            border-top: none;
+          }
+
+          i.fa-caret-right {
+            margin-right: 25px;
+          }
+
+          > .badge {
+            position: absolute;
+            right: 15px;
+            top: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// horizontal navigator
+
+@media (max-width: $screen-sm-max ) { // make '.open' class effective mobile only
+  .nav-horizontal {
+    .nav {
+      > li {
+        &.open {
+          > a {
+            background-color: darken($sidebar_bg, 5%);
+            color: $brand-primary;
+          }
+          > .fa { color: $brand-primary; }
+        }
+
+      }
+    }
+  }
+}
+
+
+// Horizontal nav is desktop only
+@media (min-width: $screen-sm) {
+
+  .main-container {
+
+    > .nav-container.nav-horizontal {
+      float: none;
+      width: auto;
+
+      // content
+      & + .content-container {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .nav-horizontal {
+    background-color: $horizontal_sidebar_bg;
+
+    .slimScrollDiv {
+      overflow: visible !important; // overrides slimScroll plugin
+      height: auto !important;
+
+      .slimScrollBar,
+      .slimScrollRail {
+        display: none !important;
+      }
+    }
+
+    .nav {
+      overflow: visible !important;
+
+      > li {
+        position: relative;
+        float: left;
+        &:hover {
+          > a {
+            background-color: darken($horizontal_sidebar_bg, 5%);
+            color: $text-color;
+          }
+          > .fa { color: $text-color; }
+        }
+        &.active {
+          > a {
+            background-color: $horizontal_link_active_bg;
+            color: $horizontal_link_active_color;
+          }
+          > .fa { color: $horizontal_link_active_color; }
+        }
+
+        > a {
+          padding: 15px 30px;
+          text-align: center;
+          font-weight: normal;
+
+          > .fa {
+            margin: 0;
+            font-size: 26px;
+            line-height: 1;
+          }
+
+          span {
+            margin: 0;
+            display: block;
+            font-size: 12px;
+          }
+
+          .badge {
+            top: 15px;
+          }
+        }
+
+        > .icon-has-ul-h { // icon for horizontal nav
+          display: block;
+          position: absolute;
+          bottom: 16px;
+          right: 10px;
+        }
+
+        > .icon-has-ul { // icon for default vertical nav
+          display: none;
+        }
+
+        &:hover {
+          > ul {
+            display: block !important;
+          }
+        }
+
+
+
+        // sub menu
+        > ul {
+          z-index: 9; // less then header, so that it's below header dropdown
+          position: absolute;
+          left: 0;
+          top: 100%;
+          min-width: 100%;
+          width: auto;
+          background-color: $horizontal_sub_nav_bg;
+          box-shadow: 0 0 4px rgba(0,0,0,.14), 2px 4px 8px rgba(0,0,0,.28);
+          width: 220px;
+
+          li {
+            white-space: nowrap;
+            &:hover,
+            &.active {
+              > a {
+                color: $brand-primary;
+              }
+            }
+            &.active {
+              > a {
+                border-left: 4px solid $brand-primary;
+                background-color: darken($horizontal_sub_nav_bg, 5%);
+              }
+            }
+
+            > a {
+              padding: 13px 50px 13px 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mini navigator
+@media (min-width: $screen-sm) {
+
+  .app.nav-collapsed-min {
+
+    // default
+    .slimScrollDiv {
+      overflow: visible !important; // overrides slimScroll plugin
+      height: auto !important;
+
+      .slimScrollBar,
+      .slimScrollRail {
+        display: none !important;
+      }
+    }
+
+    #nav-container {
+      width: 80px;
+    }
+
+    #content {
+      margin-left: 80px;
+    }
+
+    #nav-wrapper {
+      overflow: visible !important;
+    }
+    #nav {
+      overflow: visible !important;
+      > li {
+        // width: 50px;
+        > a {
+          padding: 15px 0px;
+          text-align: center;
+
+          > i {
+            margin: 0;
+            width: 28px;
+            font-size: 28px;
+          }
+          > span {
+            display: block;
+            font-size: 10px;
+          }
+        }
+
+        .icon-has-ul {
+          display: none;
+        }
+
+        > ul {
+          z-index: 9;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 220px;
+          // @include border-right-radius($border-radius-base);
+          box-shadow: $shadow-z-2;
+        }
+
+        &:hover,
+        &.open {
+          > ul {
+            display: block !important;
+          }
+        }
+      }
+    }
+
+
+    // Horizontal menu
+    .nav-horizontal {
+      &#nav-container {
+        width: auto;
+      }
+
+      & + #content {
+        margin: 0;
+      }
+
+      &.nav-fixed + #content {
+        margin: 50px 0 0;
+      }
+
+      #nav {
+        > li {
+          // width: 40px;
+          > .fa {
+            display: none;
+          }
+
+          > ul {
+            left: 0;
+            top: 100%;
+          }
+
+          > a {
+            padding: 15px 28px;
+            > span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// off canvas navigator
+
+
+@media (max-width: $screen-sm-max) {
+  .on-canvas {
+    #header {
+      position: fixed;
+      right: 0;
+      left: 0;
+      z-index: 12; // so that drop down is over on off-canvas nav
+    }
+
+    #nav-container {
+      display: block;
+      position: fixed;
+      top: $header_height * 2;
+      bottom: 0;
+      float: none;
+    }
+
+    .main-container {
+      overflow: hidden;
+      #content {
+        margin-left: 220px;
+        margin-right: -220px;
+      }
+    }
+  }
+}

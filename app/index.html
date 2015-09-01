@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>MDPanel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/textAngular/src/textAngular.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+    <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
+    <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
+    <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.css" />
+    <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/ui.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body data-ng-app="app"
+        id="app"
+        class="app nav-collapsed-min {{admin.skin.class}}"
+        data-custom-page
+        data-off-canvas-nav
+        data-ng-controller="AppCtrl"
+        data-ng-class=" {'layout-boxed': admin.layout === 'boxed' } "
+        >
+      <!--[if lt IE 9]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <div class="full-page-overlay" route-loader>
+        <img src="images/svg-loaders/puff.svg" alt="Loading" class="loader">
+      </div>
+
+      <section data-ng-include=" 'views/header.html' "
+               id="header"
+               class="header-container "
+               data-ng-class=" {'header-fixed': admin.fixedHeader} "
+               data-ng-controller="HeaderCtrl"></section>
+
+      <div class="main-container">
+          <aside data-ng-include=" 'views/nav.html' "
+                 id="nav-container"
+                 class="nav-container"
+                 data-ng-class=" {'nav-fixed': admin.fixedSidebar, 'nav-horizontal': admin.menu === 'horizontal', 'nav-vertical': admin.menu === 'vertical'}">
+          </aside>
+
+          <section data-ng-view
+                   id="content"
+                   class="content-container {{admin.pageTransition.class}}"></section>
+      </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/rangy/rangy-core.min.js"></script>
+    <script src="bower_components/rangy/rangy-cssclassapplier.min.js"></script>
+    <script src="bower_components/rangy/rangy-selectionsaverestore.min.js"></script>
+    <script src="bower_components/rangy/rangy-serializer.min.js"></script>
+    <script src="bower_components/textAngular/src/textAngular.js"></script>
+    <script src="bower_components/textAngular/src/textAngular-sanitize.js"></script>
+    <script src="bower_components/textAngular/src/textAngularSetup.js"></script>
+    <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="bower_components/raphael/raphael.js"></script>
+    <script src="bower_components/mocha/mocha.js"></script>
+    <script src="bower_components/morris.js/morris.js"></script>
+    <script src="bower_components/gauge.js/dist/gauge.js"></script>
+    <script src="bower_components/gauge.js/dist/gauge.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+    <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/ui.js -->
+    <script src="scripts/vendors/jquery.easy-pie-chart/dist/angular.easypiechart.js"></script>
+    <script src="scripts/vendors/ngmap/dist/ng-map.min.js"></script>
+    <script src="scripts/vendors/flot/jquery.flot.js"></script>
+    <script src="scripts/vendors/flot/jquery.flot.resize.js"></script>
+    <script src="scripts/vendors/flot/jquery.flot.pie.js"></script>
+    <script src="scripts/vendors/flot/jquery.flot.stack.js"></script>
+    <script src="scripts/vendors/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="scripts/vendors/flot/jquery.flot.time.js"></script>
+    <script src="scripts/vendors/xeditable/xeditable.js"></script>
+    <script src="scripts/vendors/bootstrap-file-input/bootstrap.file-input.js"></script>
+    <script src="scripts/vendors/jquery-spinner/dist/jquery.spinner.min.js"></script>
+    <script src="scripts/vendors/ng-tags-input/ng-tags-input.min.js"></script>
+    <script src="scripts/vendors/jquery.sparkline.min.js"></script>
+    <script src="scripts/vendors/jquery.flot.orderBars.js"></script>
+
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/shared/main.js"></script>
+        <script src="scripts/shared/directives.js"></script>
+        <script src="scripts/shared/localize.js"></script>
+        <script src="scripts/shared/nav.js"></script>
+        <script src="scripts/ui/ui.ctrl.js"></script>
+        <script src="scripts/ui/ui.directive.js"></script>
+        <script src="scripts/ui/ui.service.js"></script>
+        <script src="scripts/ui/map.js"></script>
+        <script src="scripts/form/form.ctrl.js"></script>
+        <script src="scripts/form/form.directive.js"></script>
+        <script src="scripts/form/form.validation.js"></script>
+        <script src="scripts/table/table.ctrl.js"></script>
+        <script src="scripts/task/task.js"></script>
+        <script src="scripts/chart/chart.ctrl.js"></script>
+        <script src="scripts/chart/chart.directive.js"></script>
+        <script src="scripts/page/page.ctrl.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

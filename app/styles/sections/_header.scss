@@ -1,0 +1,394 @@
+.header-container {
+  background-color: $space-gray;
+  box-shadow: $shadow-z-3;
+  position: relative;
+
+  > .top-header {
+    // shared
+    a {
+      color: $bright;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .dropdown-menu {
+      a {
+        color: $text-color;
+      }
+    }
+
+    .hidden-mobile {
+      display: none;
+      @media (min-width: $screen-xs) {
+        display: inline;
+      }
+    }
+    .toggle-min-nav {
+      display: none;
+      @media (min-width: $screen-sm) {
+        position: absolute;
+        display: inline-block;
+        width: $header_height;
+        text-align: center;
+        height: $header_height;
+        line-height: $header_height;
+      }
+
+      > a {
+        display: inline-block;
+        height: $header_height;
+        width: 100%;
+        i {
+          font-size: 18px;
+          vertical-align: middle;
+          color: $bright;
+          line-height: 40px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+        &:focus {
+          i {
+            background-color: rgba(0,0,0,.1);
+          }
+        }
+      }
+    }
+    //
+    .logo {
+      position: absolute;
+      width: 100%;
+      height: $header_height;
+      //  background-color: $brand-primary;
+      color: $bright;
+      // line-height: $header_height;
+      font-size: 36px;
+      //  font-weight: 300;
+      text-align: center;
+      @media (min-width: $screen-sm) {
+        position: auto;
+        display: inline-block;
+        width: 220px;
+        margin-left: $header_height;
+      }
+
+      > a {
+        font-size: 24px;
+        vertical-align: middle;
+        color: $bright;
+
+        .logo-icon {
+          color: lighten($brand-primary, 20%);
+          margin-right: 12px;
+        }
+
+        &:focus,
+        &:active {
+          outline: none;
+          text-decoration: none;
+        }
+      }
+    }
+
+    //
+    .menu-button {
+      color: $bright;
+      display: block;
+      position: absolute;
+      font-size: 18px;
+      top: ( $header_height/2 - 23);
+      left: ( $header_height/2 - 23);
+      height: 46px;
+      width: 46px;
+      line-height: 46px;
+      text-align: center;
+      // higher than header bar
+      z-index: 3;
+      border-radius: 50%;
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(0,0,0,.1);
+        // background-color: darken($brand-primary, 10%);
+      }
+
+      .icon-bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #fff;
+      }
+      .icon-bar + .icon-bar {
+        margin-top: 4px;
+      }
+
+      @media (min-width: $screen-sm) {
+        display: none;
+      }
+    }
+
+    //
+    .admin-options {
+      z-index: 20;
+      line-height: 20px;
+    }
+
+    //
+    .dropdown-menu.panel {
+      padding: 0;
+      white-space: nowrap;
+
+      .panel-heading,
+      .panel-footer {
+        padding: 10px 15px;
+      }
+
+      .list-group-item {
+        padding: 10px 15px;
+        > a {
+          display: block;
+        }
+      }
+
+      .media {
+        .media-body {
+          padding-right: 75px;
+          display: block;
+          width: auto;
+        }
+      }
+    }
+
+
+    //
+    .top-nav {
+      width: 100%;
+      height: $header_height;
+      padding: $header_height 0 0;
+      @media (min-width: $screen-sm) {
+        padding: 0 0 0 (220px + $header_height);
+      }
+
+      > ul {
+        margin-bottom: 0;
+      }
+
+      //
+      .nav-left,
+      .nav-right {
+        font-size: 24px;
+        line-height: 22px;
+
+        > li {
+          float: left;
+          &.nav-profile {
+            > a {
+              padding: 10px 10px;
+            }
+            .hidden-xs {
+              padding-right: 8px;
+            }
+            i {
+              width: 18px;
+              font-size: 16px;
+              margin-right: 5px;
+            }
+          }
+
+          > .toggle-min {
+            display: none;
+            @media (min-width:$screen-sm) {
+              display: block;
+            }
+          }
+
+          a {
+            &:hover,
+            &:focus {
+              text-decoration: none;
+            }
+          }
+
+          > .btn-group > a,
+          > a {
+            position: relative;
+            display: block;
+
+            height: $header_height;
+            padding: 19px 16px;
+            @media (min-width:$screen-sm) {
+              padding: 19px 20px;
+            }
+
+            .badge {
+              position: absolute;
+              top: 10px;
+              // right: -3px;
+              @media (min-width:$screen-sm) {
+                // background-color: transparent;
+                color: $bright;
+              }
+            }
+          }
+
+          ul.dropdown-menu {
+            a:hover {
+              background-color: $skin;
+              color: #fff;
+            }
+
+            .glyphicon {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .search-box {
+          max-width: 250px;
+          padding: 13px 0;
+
+          .input-group-addon {
+            padding: 6px 0 6px 12px;
+            border: none;
+            color: $bright;
+            background-color: lighten($space-gray, 5%);
+            border-radius: 2px 0 0 2px;
+          }
+
+          .search-box__input {
+            border: none;
+            color: $bright;
+            background-color: lighten($space-gray, 5%);
+            border-radius: 0 2px 2px 0;
+
+            @include placeholder {
+              color: darken($bright, 5%);
+            }
+          }
+        }
+
+        // color switch
+        .switch-skin {
+          display: flex;
+          justify-content: space-around;
+          align-content: center;
+          align-items: center;
+        }
+
+        .skin-option {
+          display: flex;
+          flex-grow: 1;
+          width: 20px;
+          height: 25px;
+          margin: 2px;
+          background-color: #fff;
+          border: 2px solid #000;
+          box-sizing: content-box;
+          outline: none;
+
+          &.active {
+            border-width: 4px;
+          }
+
+          &.option-skin-green {
+            background-color: $green-hornet;
+            border-color: darken($green-hornet, 10%);
+          }
+          &.option-skin-gray {
+            background-color: $space-gray;
+            border-color: darken($space-gray, 10%);
+          }
+          &.option-skin-flame {
+            background-color: $flame;
+            border-color: darken($flame, 10%);
+          }
+          &.option-skin-navi {
+            background-color: $navi;
+            border-color: darken($navi, 10%);
+          }
+        }
+      }
+
+      //
+      .nav-left {
+        float: left;
+        padding: 0;
+        > li {
+          // border-right: 1px solid $state-default-border;
+        }
+      }
+
+      //
+      .nav-right {
+        padding: 0;
+        > li {
+          > a {
+            text-align: center;
+            // border-left: 1px solid $state-default-border;
+          }
+          &:last-child {
+            // border-right: 1px solid $state-default-border;
+            .dropdown-menu.pull-right {
+              right: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    //
+    .langs {
+      .active-flag {
+        .flag {
+          margin-top: 0;
+        }
+      }
+
+      .list-langs {
+        a {
+          position: relative;
+          padding: 8px 20px 8px 57px;
+
+          .flag {
+            position: absolute;
+            top: 7px;
+            left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// skins
+@mixin skin-variants($header-color, $search-input-color) {
+  .header-container {
+    background-color: $header-color !important;
+
+    .search-box {
+      .input-group-addon {
+        background-color: $search-input-color !important;
+      }
+
+      .search-box__input {
+        background-color: $search-input-color !important;
+      }
+    }
+  }
+}
+.skin-green {
+  @include skin-variants($green-hornet, darken($green-hornet, 5%));
+}
+
+.skin-gray {
+  @include skin-variants($space-gray, lighten($space-gray, 5%));
+}
+
+.skin-flame {
+  @include skin-variants($flame, darken($flame, 5%));
+}
+
+.skin-navi {
+  @include skin-variants($navi, darken($navi, 5%));
+}

@@ -1,0 +1,485 @@
+
+<section class="page-form-ele page">
+
+  <!-- Radio buttons and checkbox -->
+  <section class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- SWITCHES -->
+          <h3><span class="mdi mdi-toggle-switch-off"></span> Switches</h3>
+          <h4>Large Size</h4>
+          <label class="switch"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-success"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-info"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-warning"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-danger"><input type="checkbox" checked><i></i></label>
+
+          <h4>Small Size</h4>
+          <label class="switch switch-sm"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-sm switch-success"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-sm switch-info"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-sm switch-warning"><input type="checkbox" checked><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-sm switch-danger"><input type="checkbox" checked><i></i></label>
+
+          <h4>Disabled switch</h4>
+          <div class="space"></div>
+          <label class="switch"><input type="checkbox" checked disabled><i></i></label>
+          <div class="space"></div>
+          <label class="switch"><input type="checkbox" disabled><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-sm"><input type="checkbox" checked disabled><i></i></label>
+          <div class="space"></div>
+          <label class="switch switch-sm"><input type="checkbox" disabled><i></i></label>
+
+
+          <!-- END SWITCHES -->
+          <div class="divider"></div>
+
+          <!-- CHECKBOXES AND RADIO -->
+          <h3><i class="fa fa-check-square-o"></i> Radio Buttons and Checkbox</h3>
+          <div class="divider"></div>
+          <dl class="dl-horizontal">
+            <dt>Radio buttons</dt>
+            <dd>
+              <label class="ui-radio"><input name="radio1" type="radio" value="option1" ><span>Option 1</span></label>
+              <label class="ui-radio"><input name="radio1" type="radio" value="option2" checked><span>Option 2</span></label>
+              <label class="ui-radio"><input name="radio1" type="radio" value="option3"><span>Option 3</span></label>
+            </dd>
+            <dt>Disabled radio buttons</dt>
+            <dd>
+              <label class="ui-radio"><input name="radio2" type="radio" value="option3" disabled><span>Radio disabled</span></label>
+              <label class="ui-radio"><input name="radio2" type="radio" value="option4" checked disabled><span>Radio checked disabled</span></label>
+            </dd>
+          </dl>
+
+          <dl class="dl-horizontal">
+            <dt>Checkbox</dt>
+            <dd>
+              <label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>Option 1</span></label>
+              <label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>Option 2</span></label>
+              <label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>Option 3</span></label>
+            </dd>
+            <dt>Disabled checkbox</dt>
+            <dd>
+              <label class="ui-checkbox"><input name="checkbox2" type="checkbox" value="option3" disabled><span>Radio disabled</span></label>
+              <label class="ui-checkbox"><input name="checkbox2" type="checkbox" value="option4" checked disabled><span>Radio checked disabled</span></label>
+            </dd>
+          </dl>
+          <!-- END CHECKBOXES AND RADIO -->
+          <div class="divider"></div>
+
+          <!-- SELECT -->
+          <h3><i class="fa fa-check-square-o"></i> Select</h3>
+          <div class="divider"></div>
+          <span class="ui-select">
+            <select>
+              <option>Mustard</option>
+              <option>Ketchup</option>
+              <option>Barbecue</option>
+            </select>
+          </span>
+          <!-- END SELECT -->
+
+          <div class="divider"></div>
+          <!-- SPINNER -->
+          <h3><i class="fa fa-plus-square-o"></i> Spinner</h3>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="input-group" data-ui-spinner>
+                <input type="text" class="form-control" value="1">
+                <div class="input-group-btn btn-group-vertical">
+                  <button type="button" class="btn btn-xs btn-default" data-spin="up">
+                    <i class="fa fa-angle-up"></i>
+                  </button>
+                  <button type="button" class="btn spinner-down btn-xs btn-default" data-spin="down">
+                    <i class="fa fa-angle-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input-group" data-ui-spinner>
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-primary" data-spin="up">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </span>
+                <input type="text" class="spinner-input form-control">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" data-spin="down">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- END SPINNER -->
+          <div class="divider"></div>
+          <!-- TYPEHEAD -->
+          <h3><i class="fa fa-pencil-square-o"></i> Typeahead (Autocomplete)</h3>
+          <div class="divider"></div>
+          <div class="" data-ng-controller="TypeaheadCtrl">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text"
+                ng-model="selected"
+                typeahead="state for state in states | filter:$viewValue | limitTo:8"
+                class="form-control"
+                placeholder="Search">
+              </div>
+            </div>
+            <div class="callout callout-info">
+              <p>Searching for state: <b>{{selected}}</b></p>
+            </div>
+          </div>
+          <!-- END TYPEHEAD -->
+          <div class="divider"></div>
+          <!-- TIMEPICKER -->
+          <h3><i class="fa fa-calendar"></i> Timepicker</h3>
+          <div class="divider"></div>
+          <div class="row" data-ng-controller="TimepickerDemoCtrl">
+            <div class="col-sm-4">
+              <div ng-model="mytime" ng-change="changed()" style="display:inline-block;">
+                <timepicker class="ui-timepicker" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+              </div>
+
+            </div>
+
+            <div class="col-sm-8">
+              <p>
+                Hours step:
+                <span class="space"></span>
+                <span class="ui-select"><select ng-model="hstep" ng-options="opt for opt in options.hstep"></select></span>
+              </p>
+              <p>
+                Minutes step:
+                <span class="ui-select"><select ng-model="mstep" ng-options="opt for opt in options.mstep"></select></span>
+              </p>
+
+              <button class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
+              <div class="space"></div>
+            </div>
+            <div class="col-sm-12">
+              <div class="callout callout-info">
+                <p>Time is: <strong>{{mytime | date:'shortTime'}}</strong></p>
+              </div>
+            </div>
+          </div>
+          <!-- END TIMEPICKER -->
+          <div class="divider"></div>
+          <!-- DATEPICKER -->
+          <h3><i class="fa fa-calendar"></i> Datepicker</h3>
+          <div class="divider"></div>
+          <div class="row" data-ng-controller="DatepickerDemoCtrl">
+            <div class="col-sm-4">
+
+              <div class="input-group ui-datepicker">
+                <input type="text"
+                class="form-control"
+                datepicker-popup="{{format}}"
+                ng-model="dt"
+                is-open="opened"
+                min="minDate"
+                max="'2015-06-22'"
+                datepicker-options="dateOptions"
+                date-disabled="disabled(date, mode)"
+                ng-required="true"
+                close-text="Close">
+                <span class="input-group-addon" ng-click="open($event)"><i class="fa fa-calendar"></i></span>
+              </div>
+            </div>
+
+            <div class="col-sm-8">
+              <p>
+                Format:
+                <span class="ui-select">
+                  <select ng-model="format"
+                  ng-options="f for f in formats"></select>
+                </span>
+              </p>
+            </div>
+            <div class="col-sm-12">
+              <div class="callout callout-info">
+                <p>Date is: <strong>{{dt | date:'fullDate'}}</strong></p>
+              </div>
+            </div>
+          </div>
+          <!-- END DATEPICKER -->
+          <div class="divider"></div>
+          <!-- FILE INPUT BUTTON -->
+          <h3><i class="fa fa-upload"></i> File upload button</h3>
+          <div class="divider"></div>
+          <input type="file" title="Choose File" data-ui-file-upload>
+          <div class="space"></div>
+          <input type="file" title="Choose File" data-ui-file-upload class="btn-primary">
+          <div class="space"></div>
+          <input type="file" title="Choose File" data-ui-file-upload class="btn-success">
+          <div class="space"></div>
+          <input type="file" title="Choose File" data-ui-file-upload class="btn-info">
+          <div class="space"></div>
+          <input type="file" title="Choose File" data-ui-file-upload class="btn-warning">
+          <div class="space"></div>
+          <input type="file" title="Choose File" data-ui-file-upload class="btn-danger">
+
+          <!-- END FILE INPUT BUTTON -->
+          <div class="divider"></div>
+          <!-- DROPZONE -->
+          <h3><i class="fa fa-upload"></i> Dropzone</h3>
+          <div class="divider"></div>
+          <div>
+            <div class="drop-box">Drag and drop files here</div>
+          </div>
+          <!-- END DROPZONE -->
+          <div class="divider"></div>
+
+          <h3><i class="fa fa-tag"></i> Tags input</h3>
+          <div class="divider"></div>
+          <!-- TAGS INPUT -->
+          <div data-ng-controller="TagsDemoCtrl">
+            <tags-input ng-model="tags"
+            class="ui-tags-input"
+            ></tags-input>
+          </div>
+          <!-- END TAGS INPUT -->
+        </div>
+
+        <div class="col-md-6">
+          <!-- FORM INPUTS VARIANTS  -->
+          <h3><i class="fa fa-list"></i> Inputs, Input Variants, Textarea</h3>
+          <div class="divider"></div>
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="" class="col-sm-2">Normal input</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Rounded input</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-round">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="label-focus" class="col-sm-2">Label focus</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="label-focus">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">With help</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control">
+                <small class="help-block">Help text</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Placeholder</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Placeholder">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Disabled</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" disabled value="" placeholder="Disabled">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Tooltip on focus</label>
+              <div class="col-sm-10">
+                <input tooltip="Tooltip on top" type="text" class="form-control" data-toggle="tooltip" data-placement="top" tooltip-trigger="focus">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Input with icons</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control">
+                <span class="icon glyphicon glyphicon-star"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Input primary</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-primary">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Input info</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-info">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Input success</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-success">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Input warning</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-warning">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Input error</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-danger">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Control sizing</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-lg">
+                <div class="divider"></div>
+                <input type="text" class="form-control">
+                <div class="divider"></div>
+                <input type="text" class="form-control input-sm">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Input Group</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input type="text" class="form-control" placeholder="Email">
+                </div>
+                <div class="divider"></div>
+                <div class="input-group">
+                  <input type="text" class="form-control">
+                  <span class="input-group-addon">.00</span>
+                </div>
+                <div class="divider"></div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                  <input type="text" class="form-control">
+                  <span class="input-group-addon">.00</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Button addons</label>
+              <div class="col-sm-10">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="col-sm-2">Textarea</label>
+              <div class="col-sm-10">
+                <textarea name="" id="" class="form-control" rows="4"></textarea>
+              </div>
+            </div>
+          </form>
+          <!-- END FORM INPUTS VARIANTS  -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rating -->
+  <section class="panel panel-default">
+    <div class="panel-heading"><strong><span class="fa fa-star"></span> Rating</strong></div>
+    <div class="panel-body" data-ng-controller="RatingDemoCtrl">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating> -->
+          <rating class="ui-rating size-h3"
+          ng-model="rate"
+          max="max"
+          readonly="isReadonly"
+          on-hover="hoveringOver(value)"
+          on-leave="overStar = null"
+          state-on="'fa fa-star'"
+          state-off="'fa fa-star-o'"></rating>
+          <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+          <div class="callout callout-info">
+            <p>Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></p>
+          </div>
+          <button class="btn btn-info" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+        </div>
+        <div class="col-md-6">
+          <h5>Colorful and Sizing</h5>
+          <div ng-init="x1 = 4">
+            <rating class="ui-rating size-h4 ui-rating-success"
+            ng-model="x1"
+            max="6"
+            readonly="true"
+            state-on="'fa fa-star'"
+            state-off="'fa fa-star-o'"></rating>
+          </div>
+          <div ng-init="x2 = 5">
+            <rating class="ui-rating size-h3 ui-rating-info"
+            ng-model="x2"
+            max="7"
+            readonly="true"
+            state-on="'fa fa-star'"
+            state-off="'fa fa-star-o'"></rating>
+          </div>
+          <div ng-init="x3 = 6">
+            <rating class="ui-rating size-h2 ui-rating-warning"
+            ng-model="x3"
+            max="8"
+            readonly="true"
+            state-on="'fa fa-star'"
+            state-off="'fa fa-star-o'"></rating>
+          </div>
+          <div ng-init="x4 = 7">
+            <rating class="ui-rating size-h1 ui-rating-danger"
+            ng-model="x4"
+            max="9"
+            readonly="true"
+            state-on="'fa fa-star'"
+            state-off="'fa fa-star-o'"></rating>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- end Rating -->
+
+    <!-- Editor -->
+    <section class="panel panel-default">
+      <div class="panel-heading"><strong><span class="fa fa-list"></span> Editor</strong></div>
+      <div class="panel-body">
+        <div text-angular ng-model="mailContent" class="ui-editor"></div>
+      </div>
+    </section>
+    <!-- end Editor -->
+
+  </section>

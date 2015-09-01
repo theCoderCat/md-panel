@@ -1,0 +1,235 @@
+<div class="page">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Popover -->
+      <section class="panel panel-default">
+        <div class="panel-heading"><span class="fa fa-comment-o"></span> Popover</div>
+        <div class="panel-body text-center">
+          <button popover-placement="top" popover-title="The Popover Title" popover="On the Top! Here' goes the popover content..." popover-append-to-body="true" class="btn btn-w-lg btn-danger btn-gap">Popover on Top</button>
+          <br>
+          <button popover-placement="right" popover-title="The Popover Title" popover="On the Right! Here' goes the popover content..." popover-append-to-body="true" class="btn btn-w-lg btn-warning btn-gap">Popover on Right</button>
+          <br>
+          <button popover-placement="bottom" popover-title="The Popover Title" popover="On the Bottom! Here' goes the popover content..." popover-append-to-body="true" class="btn btn-w-lg btn-info btn-gap">Popover on Bottom</button>
+          <br>
+          <button popover-placement="left" popover-title="The Popover Title" popover="On the Left! Here' goes the popover content..." popover-append-to-body="true" class="btn btn-w-lg btn-success btn-gap">Popover on Left</button>
+          <br>
+          <button popover="On mouse enter!" popover-trigger="mouseenter" class="btn btn-w-lg btn-primary btn-gap">Popover on Mouseenter</button>
+          <div class="divider"></div>
+          <input type="text" value="" placeholder="Popover on focus" popover="Lorem ipsum dolor sit amet, consectetur adipisicing elit."  popover-trigger="focus" class="form-control">
+        </div>
+      </section>
+      <!-- Popover -->
+    </div>
+    <div class="col-md-6">
+      <!-- Tooltip -->
+      <section class="panel panel-default">
+        <div class="panel-heading"><span class="fa fa-comment-o"></span> Tooltip</div>
+        <div class="panel-body text-center">
+          <button class="btn btn-w-lg btn-default btn-gap" tooltip-placement="top" tooltip="Show on the Top!" tooltip-append-to-body="true">Tooltip on Top</button>
+          <br>
+          <button class="btn btn-w-lg btn-primary btn-gap" tooltip-placement="left" tooltip="Show on the Left!" tooltip-append-to-body="true">Tooltip on Left</button>
+          <br>
+          <button class="btn btn-w-lg btn-success btn-gap" tooltip-placement="right" tooltip="Show on the Right!" tooltip-append-to-body="true">Tooltip on Right</button>
+          <br>
+          <button class="btn btn-w-lg btn-danger btn-gap" tooltip-animation="false" tooltip="I don't fade :/" tooltip-append-to-body="true">Without Animation</button>
+          <br>
+          <button class="btn btn-w-lg btn-warning btn-gap" tooltip-popup-delay='1000' tooltip='Appears with delay' tooltip-append-to-body="true">Tooltip Delayed</button>
+          <br>
+          <button class="btn btn-w-lg btn-info btn-gap" tooltip-placement="bottom" tooltip="Show on the Bottom!" tooltip-append-to-body="true">Tooltip on Bottom</button>
+        </div>
+      </section>
+      <!-- end Tooltip -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Notfify -->
+      <section class="panel panel-default">
+        <div class="panel-heading"><span class="fa fa-comment-o"></span> Notify</div>
+        <div class="panel-body" data-ng-controller="NotifyCtrl">
+          <button class="btn btn-w-md btn-gap btn-info" data-ng-click="notify('info')">info message</button>
+          <button class="btn btn-w-md btn-gap btn-success" data-ng-click="notify('success')">success message</button>
+          <button class="btn btn-w-md btn-gap btn-warning" data-ng-click="notify('warning')">warning message</button>
+          <button class="btn btn-w-md btn-gap btn-danger" data-ng-click="notify('error')">error message</button>
+        </div>
+      </section>
+      <!-- end Notify -->
+    </div>
+
+    <div class="col-md-6">
+
+      <!-- Modal -->
+      <section class="panel panel-default">
+        <div class="panel-heading"><span class="fa fa-list-alt"></span> Modal</div>
+        <div class="panel-body" data-ng-controller="ModalDemoCtrl">
+          <script type="text/ng-template" id="dummyModal.html">
+            <div class="modal-header">
+              <button type="button" class="close" ng-click="cancel()" aria-hidden="true"><span class="fa fa-remove"></span></button>
+              <h4 class="modal-title">Modal</h4>
+            </div>
+            <div class="modal-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" ng-click="ok()"><i class="fa fa-check"></i> OK</button>
+              <button class="btn btn-warning" ng-click="cancel()"><i class="fa fa-remove"></i> Cancel</button>
+            </div>
+          </script>
+
+          <script type="text/ng-template" id="formModal.html">
+            <div class="modal-header">
+              <button type="button" class="close" ng-click="cancel()" aria-hidden="true"><span class="fa fa-remove"></span></button>
+              <h4 class="modal-title">Modal with form</h4>
+            </div>
+            <div class="modal-body with-padding">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>First name</label>
+                    <input type="text" placeholder="Littlefield" class="form-control">
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label class="control-label">Last name</label>
+                    <input type="text" placeholder="Peter" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Address line 1</label>
+                    <input type="text" placeholder="Ring street 12" class="form-control">
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label>Address line 2</label>
+                    <input type="text" placeholder="building D, flat #67" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label>City</label>
+                    <input type="text" placeholder="Fleming Island" class="form-control">
+                  </div>
+
+                  <div class="col-sm-4">
+                    <label>State/Province</label>
+                    <input type="text" placeholder="Florida" class="form-control">
+                  </div>
+
+                  <div class="col-sm-4">
+                    <label>ZIP code</label>
+                    <input type="text" placeholder="32003" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Email</label>
+                    <input type="text" placeholder="peter@email.com" class="form-control">
+                    <span class="help-block">name@email.com</span>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label>Phone #</label>
+                    <input type="text" placeholder="+99-99-9999-9999" data-mask="+99-99-9999-9999" class="form-control">
+                    <span class="help-block">+99-99-9999-9999</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Submit form</button>
+              <button class="btn btn-warning" ng-click="cancel()"><i class="fa fa-remove"></i> Close</button>
+            </div>
+          </script>
+
+          <script type="text/ng-template" id="htmlModal.html">
+            <div class="modal-header">
+							<button type="button" class="close" ng-click="cancel()" aria-hidden="true"><span class="fa fa-remove"></span></button>
+							<h4 class="modal-title"><i class="fa fa-bars"></i> Modal with icons</h4>
+						</div>
+
+						<div class="modal-body with-padding">
+							<div class="alert alert-danger block-inner">
+	                <i class="fa fa-cog"></i> Alert inside modal sample
+	                <button type="button" class="close" data-dismiss="alert"><span class="fa fa-remove"></span></button>
+	            </div>
+
+							<h5><i class="icon-text-height"></i> Sample heading with icon</h5>
+							<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+
+							<hr>
+
+							<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+						</div>
+
+						<div class="modal-footer">
+							<button class="btn btn-primary"><i class="fa fa-check"></i> Save</button>
+							<button class="btn btn-warning" ng-click="cancel()"><i class="fa fa-remove"></i> Close</button>
+						</div>
+          </script>
+
+          <button class="btn btn-gap-v btn-primary" ng-click="open('dummyModal.html', '')">Normal Modal</button>
+          <button class="btn btn-gap-v btn-info" ng-click="open('dummyModal.html', 'sm')">Small Modal</button>
+          <button class="btn btn-gap-v btn-warning" ng-click="open('dummyModal.html', 'lg')">Large Modal</button>
+          <button class="btn btn-gap-v btn-success" ng-click="open('formModal.html', '')">Modal with form</button>
+          <button class="btn btn-gap-v btn-danger" ng-click="open('htmlModal.html', '')">Modal with HTML content</button>
+        </div>
+      </section>
+      <!-- end Modal -->
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Callout -->
+      <section class="panel panel-default">
+          <div class="panel-heading"><span class="fa fa-th-list"></span> Callout</div>
+          <div class="panel-body">
+              <div class="callout callout-success">
+                  <h4>Callout heading</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+              </div>
+              <div class="callout callout-info">
+                  <h4>Callout heading</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+              </div>
+              <div class="callout callout-warning">
+                  <h4>Callout heading</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+              </div>
+              <div class="callout callout-danger">
+                  <h4>Callout heading</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, alias, in accusantium totam adipisci vel et suscipit quidem libero pariatur minus ratione quo doloremque error at nemo incidunt dicta quia?</p>
+              </div>
+          </div>
+      </section>
+      <!-- end Callout -->
+    </div>
+
+    <div class="col-md-6">
+      <!-- Alert -->
+      <section class="panel panel-default">
+          <div class="panel-heading"><span class="fa fa-warning"></span> Alerts</div>
+          <div class="panel-body" data-ng-controller="AlertDemoCtrl">
+              <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+              <button class='btn btn-primary' ng-click="addAlert()">Add Alert</button>
+          </div>
+      </section>
+      <!-- end Alert -->
+    </div>
+  </div>
+
+
+</div>

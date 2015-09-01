@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+  <title>MDPanel documentation</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+  <!--[if lt IE 10]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <header role="banner" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="javascript:;" class="navbar-brand">MDPanel</a>
+      </div>
+      <nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Documentation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <!-- INTRODUCTION & THANK YOU -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#introduce" aria-expanded="true" aria-controls="introduce">
+                  <strong>Introduction & thank you</strong>
+                </a>
+              </h4>
+            </div>
+            <div id="introduce" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <h1 class="text-success">MDPanel</h1>
+                <h4>Responsive Admin Template</h4>
+                <pre>Since 2015-01-26 by theCoderCat</pre>
+              </div>
+            </div>
+          </div>
+          <!-- INTRODUCTION & THANK YOU - END -->
+
+          <!-- HOW TO DEVELOP -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#howToRun" aria-expanded="false" aria-controls="howToRun">
+                  <strong>How to run it?</strong>
+                </a>
+              </h4>
+            </div>
+            <div id="howToRun" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <strong>You can run this project using one of following options:</strong>
+                <ol>
+                  <!-- <li>Open <code>index.html</code> directly</li> -->
+                  <li>
+                    Serve it from localhost using XAMPP, just copy <code>dist</code> folder into <code>htdocs</code> folder
+                  </li>
+                  <li>
+                    Serve it from localhost using node-static:
+                    <ul>
+                      <li>You will need NodeJS, download it from [<a href="https://nodejs.org/">here</a>]</li>
+                      <li>NPM come along with node.js</li>
+                      <li>
+                        Install <code>node-static</code> using
+                        <pre>$ npm install --global node-static</pre>
+                        Once node-static has been installed, navigate to <code>dist</code> folder and run
+                        <pre>$ static</pre>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- HOW TO RUN - END -->
+
+
+          <!-- HOW TO DEVELOP -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#howToDevelop" aria-expanded="false" aria-controls="howToDevelop">
+                  <strong>How to develop?</strong>
+                </a>
+              </h4>
+            </div>
+            <div id="howToDevelop" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <p>This project have been developed using Yeoman's automation workflow. Therefore, in order to extend it for your need, some basic knowledge about <code>node.js</code>, <code>npm</code>, <code>bower</code> and <code>Yeoman</code> is required.</p>
+                <p>
+                  You can read full documentation for each of them from their sites
+                  <ul>
+                    <li><a href="https://nodejs.org/documentation/">node.js's docs</a></li>
+                    <li><a href="http://yeoman.io/learning/">Learn Yeoman</a></li>
+                    <li><a href="https://docs.npmjs.com/">NPM's docs</a></li>
+                    <li><a href="http://bower.io/">Bower's docs</a></li>
+                  </ul>
+                </p>
+                <p>In this document's span, I will show you how to setup the environment and get the project run properly.</p>
+                <ol>
+                  <li>
+                    First, install node.js from [<a href="https://nodejs.org/">NodeJS's home page</a>] if you haven't had it yet. NPM come along with <code>node.js</code>
+                  </li>
+                  <li>
+                    Next, you'll need <code>yeoman</code> and <code>bower</code> installed, use commands below
+                    <pre>npm install --global yo</pre>
+                    <pre>npm install --global bower</pre>
+                  </li>
+                  <li>
+                    In order to get project running, you have to install its dependencies, move to project directory and run
+                    <pre>npm install</pre>
+                  </li>
+                  <li>
+                    <strong class="text-danger">Caution:</strong>
+                    <p>
+                      Some of you probably already got used to Yeoman's workflow and wonder why I didn't say anything about using <code>bower install</code> command.
+                    </p>
+                    <p>This theme's released with <code>bower_components</code>, so you dont need to do that.</p>
+                    <p>
+                      Well, you can install these components explicitly if you want though it's not recommended. By the time you bought this theme, these dependencies probably has been updated, so mass update may cause unwanted conflicts.
+                      <strong class="text-danger">Use it with caution.</strong>
+                    </p>
+                  </li>
+                  <li>
+                    Once dependencies have been installed, start previewing by running
+                    <pre>grunt serve</pre>
+                  </li>
+                  <li>
+                    To build project, run
+                    <pre>grunt build</pre>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- HOW TO DEVELOP - END -->
+
+
+          <!--  -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#structure" aria-expanded="false" aria-controls="structure">
+                  <strong>Files structure</strong>
+                </a>
+              </h4>
+            </div>
+            <div id="structure" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-6">
+<pre>MDPanel/
+├── sourcecode/
+│   ├── app/
+│   │    ├── fonts/
+│   │    ├── images/
+│   │    ├── scripts/
+│   │    ├── styles/
+│   │    ├── views/
+│   │    ├── favicon.ico
+│   │    └── index.html
+│   ├── bower_components/
+│   ├── .bowerrc
+│   ├── .editorconfig
+│   ├── .gitattributes
+│   ├── .jshintrc
+│   ├── .travis.yml
+│   ├── bower.json
+│   ├── Gruntfile.js
+│   ├── README.md
+│   └── package.json
+├── dist/
+└── documentation/</pre>
+                  </div>
+                  <div class="col-md-6">
+                    <ol>
+                      <li>
+                        <code>sourcecode/</code> contains MDPanel's source code
+                      </li>
+                      <li>
+                        <code>bower_components/</code> contains third-party front-end components (bootstrap, angular, etc)
+                      </li>
+                      <li>
+                        <code>dist/</code> contains minified files after build command has done.
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+
+          <!--  -->
+          <!-- <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#introduce" aria-expanded="false" aria-controls="introduce">
+                  <strong>title</strong>
+                </a>
+              </h4>
+            </div>
+            <div id="introduce" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+
+              </div>
+            </div>
+          </div> -->
+          <!--  -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+  </html>
