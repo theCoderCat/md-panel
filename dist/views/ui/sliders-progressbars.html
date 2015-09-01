@@ -1,0 +1,73 @@
+<div class="page"> <!-- Range sliders --> <section class="panel panel-default"> <div class="panel-heading"><strong><span class="fa fa-sliders"></span> Slider</strong></div> <div class="panel-body"> <div class="row"> <div class="col-md-7"> <strong>Basic</strong><small> slider</small> <input type="text" ui-range-slider data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-orientation="horizontal" data-slider-value="6" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round"> <strong>Range</strong><small> slider disabled</small> <input type="text" ui-range-slider data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-orientation="horizontal" data-slider-value="5" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round" data-slider-enabled="false"> <strong>Range</strong><small> slider with step of 10</small> <input type="text" value="" ui-range-slider data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-orientation="horizontal" data-slider-value="60" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round"> <strong>Range</strong><small> slider</small> <input type="text" value="" ui-range-slider data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-orientation="horizontal" data-slider-value="[20, 80]" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round"> </div> <div class="col-md-5"> <strong>Vertical</strong><small> slider</small> <div class="space space-lg"></div> <input type="text" ui-range-slider data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-orientation="vertical" data-slider-value="5" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round"> <div class="space space-lg"></div> <input type="text" value="" ui-range-slider data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-orientation="vertical" data-slider-value="50" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round"> <div class="space space-lg"></div> <input type="text" value="" ui-range-slider data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-orientation="vertical" data-slider-value="30" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round"> <div class="space space-lg"></div> <input type="text" value="" ui-range-slider data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-orientation="vertical" data-slider-value="[10, 90]" data-slider-selection="before" data-slider-tooltip="show" data-slider-handle="round"> </div> <!-- <div class="col-md-4">
+          <strong>Colorful</strong><small> slider</small>
+          <div class="space space-lg"></div>
+
+          <input type="text"
+          value="30"
+          data-slider-id="slider-success"
+          ui-range-slider
+          data-slider-min="0"
+          data-slider-max="100"
+          data-slider-step="1"
+          data-slider-orientation="horizontal"
+          data-slider-value="30"
+          data-slider-selection="before"
+          data-slider-tooltip="show"
+          data-slider-handle="round">
+          <div class="space space-lg"></div>
+
+          <input type="text"
+          value="40"
+          data-slider-id="slider-danger"
+          ui-range-slider
+          data-slider-min="0"
+          data-slider-max="100"
+          data-slider-step="1"
+          data-slider-orientation="horizontal"
+          data-slider-value="40"
+          data-slider-selection="before"
+          data-slider-tooltip="show"
+          data-slider-handle="round">
+          <div class="space space-lg"></div>
+
+          <input type="text"
+          value="50"
+          data-slider-id="slider-dark"
+          ui-range-slider
+          data-slider-min="0"
+          data-slider-max="100"
+          data-slider-step="1"
+          data-slider-orientation="horizontal"
+          data-slider-value="50"
+          data-slider-selection="before"
+          data-slider-tooltip="show"
+          data-slider-handle="round">
+          <div class="space space-lg"></div>
+
+          <input type="text"
+          value="60"
+          data-slider-id="slider-info"
+          ui-range-slider
+          data-slider-min="0"
+          data-slider-max="100"
+          data-slider-step="1"
+          data-slider-orientation="horizontal"
+          data-slider-value="60"
+          data-slider-selection="before"
+          data-slider-tooltip="show"
+          data-slider-handle="round">
+          <div class="space space-lg"></div>
+
+          <input type="text"
+          value="70"
+          data-slider-id="slider-warning"
+          ui-range-slider
+          data-slider-min="0"
+          data-slider-max="100"
+          data-slider-step="1"
+          data-slider-orientation="horizontal"
+          data-slider-value="70"
+          data-slider-selection="before"
+          data-slider-tooltip="show"
+          data-slider-handle="round">
+        </div> --> </div> </div> </section> <!-- end Range sliders --> <!-- Progress bar --> <section class="panel panel-default"> <div class="panel-heading"><strong><span class="fa fa-sliders"></span> Progress bar</strong></div> <div class="panel-body" data-ng-controller="ProgressDemoCtrl"> <div class="row"> <div class="col-md-6"> <strong>Static</strong><small> Progress bar</small> <progressbar class="progressbar-sm progress-rounded" value="31" type="success"></progressbar> <progressbar class="progressbar-sm progress-rounded" value="65" type="info"></progressbar> <progressbar class="progressbar-sm progress-rounded" value="23" type="warning"></progressbar> <progressbar class="progressbar-sm progress-rounded" value="90" type="danger"></progressbar> <strong>Stacked</strong><small> Progress bar</small> <progress class="progressbar-sm progress-rounded"> <bar value="23" type="success"></bar> <bar value="56" type="warning"></bar> <bar value="11" type="danger"></bar> </progress> <strong>Dynamic</strong><small> Progress bar</small> <progressbar class="progress-rounded" max="max" value="dynamic"><span>{{dynamic}} / {{max}}</span></progressbar> <strong>No animation</strong> <progressbar class="progress-rounded" animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></progressbar> <strong>Object <em>(changes type based on value)</em></strong> <progressbar class="progress-striped progress-rounded active" value="dynamic" type="{{type}}">{{type}} <i ng-show="showWarning">!!! Watch out !!!</i></progressbar> <div class="divider"></div> <button class="btn btn-sm btn-default btn--embossed" type="button" ng-click="random()">Randomize</button> </div> <div class="col-md-6"> <strong>Striped</strong><small> Progress bar</small> <progressbar class="progressbar-sm progress-rounded progress-striped" value="32" type="success"></progressbar> <progressbar class="progressbar-sm progress-rounded progress-striped" value="65" type="info"></progressbar> <progressbar class="progressbar-sm progress-rounded progress-striped" value="98" type="warning"></progressbar> <progressbar class="progressbar-sm progress-rounded progress-striped" value="77" type="danger"></progressbar> <strong>Animated</strong><small> Progress bar</small> <progressbar class="progressbar-sm progress-rounded progress-striped active" value="55"></progressbar> <progress class="progressbar-sm progress-rounded progress-striped active"> <bar value="43" type="success"></bar> <bar value="23" type="warning"></bar> <bar value="34" type="danger"></bar> </progress> <strong>Large</strong><small> Progress bar</small> <progressbar class="progressbar progress-rounded progress-striped active" value="55"></progressbar> <strong>Extra small</strong><small> Progress bar</small> <progressbar class="progressbar-xs progress-rounded progress-striped active" value="55"></progressbar> </div> </div> <div class="row"> <div class="col-md-6"> </div> <div class="col-md-6"> </div> </div> </div> </section> <!-- end Progress bar --> </div>
