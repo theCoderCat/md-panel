@@ -1,11 +1,10 @@
-# Live preview
-http://md-panel.thecodercat.com
-
 #
 MDPanel is a responsive admin dashboard built on top of Bootstrap 3.3.15 and  AngularJS 1.3.15. Coming with a lot of useful components, well organized code and aimed for the best functionality, it will be a good fit for any type of back-end application.
 
+# Live preview
+http://md-panel.thecodercat.com
+
 # Features
-----------------------------------------------
 * Build with SASS
 * Responsive design
 * Smooth workflow with Yeoman
@@ -16,7 +15,6 @@ MDPanel is a responsive admin dashboard built on top of Bootstrap 3.3.15 and  An
 * Alot of components and widgets
 
 # Credit
-----------------------------------------------
 * Bootstrap
 * jQuery
 * AngularJS
